@@ -50,5 +50,42 @@
     Compass : Compass is a GUI, where we can execute the query, will see the result in fancy format.
 
 
+## Analogies
+    SQl             Mongodb
+    Database        Database
+    Table           Collection
+    Row             Document
+    Column          Field
 
+## basic commands
+### display list of db
+    show dbs
 
+### to create new db or to connect to existing db
+    use <database_name>
+    use seed
+
+### display the db name
+    db
+
+### Drop database
+    eg: drop database seed
+    use seed
+    db.dropDatabase();
+
+### create collection
+    db.createCollection(<collection name>);
+    eg: db.createCollection('customers');
+    output: { ok: 1 }
+
+### drop collection
+    db.<collection name>.drop();
+    eg: db.customers.drop();
+    output will be boolean. true mean collection deleted and fasle means no collection with name
+
+### insert record in collection
+    db.<collectin_name>.insertOne({});  //to insert one record
+    db.<collectin_name>.insertMany([{},{}]); to insert multiple record
+
+### display record
+    db.<collection_name>.find();
