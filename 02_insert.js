@@ -17,4 +17,17 @@ db.customers.insertOne({
 });
 
 
+db.customers.insertMany([
+    {id:3, name: 'Jackie', age:23},
+    {id:4, name: 'Jackie', age:13},
+    {id:5, name: 'Jackie', age:43},
+    {id:6, name: 'Jackie', age:53},
+    {id:7, name: 'Jackie', age:24},
+    {id:8, name: 'Jackie', age:25},
+    {id:9, name: 'Jackie', age:76},
+    {id:10, name: 'Jackie', age:28},
+    {id:11, name: 'Jackie', age:43},
+    {id:12, name: 'Jackie', age:53}
+]);
+
 

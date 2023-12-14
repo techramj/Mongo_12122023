@@ -89,3 +89,14 @@
 
 ### display record
     db.<collection_name>.find();
+
+### exeute script (oracle sql vs mongodb)
+#### oracle sql
+    create the script example => script/emp.sql
+    sqlplus> @<absolutepath with filename>
+    eg: sqlplus>@ d:\12_dec_2023\script\emp.sql
+
+#### mongodb
+     create the script example => script/emp.js
+     cmd> mongosh <database name> <absoulute path with filename>
+     eg: cmd>mongosh seed  d:\12_dec_2023\script\emp.js
