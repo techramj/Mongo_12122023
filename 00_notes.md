@@ -90,6 +90,19 @@
 ### display record
     db.<collection_name>.find();
 
+### diplay list of collection in a db
+    show collections
+
+
+### query syntax
+    db.<collection_name>.find([{filter}],[{projection}]);
+    eg: fetch the record with qty = 10
+        db.inventory.find({qty:10});
+
+### operators
+#### eq
+    db.inventory.find({qty: {$eq:11}})
+
 ### exeute script (oracle sql vs mongodb)
 #### oracle sql
     create the script example => script/emp.sql
