@@ -48,3 +48,6 @@ db.inventory.insertMany(
       {_id:7,item:{name:'ij',code:'567'},qty:10, tags:['A','B']}
   ]
   );
+
+
+  
