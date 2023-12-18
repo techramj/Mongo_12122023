@@ -69,3 +69,61 @@ db.budgets.find({$expr:{$gt:["$spent", "$budget"]}});
 
 //$mod
 db.budgets.find({budget : {$mod: [100, 50]}});
+
+//$text
+//record which contain java
+//note: text can be only applied on indexed field
+
+db.articles.find({$text :{$search:'java'}});
+
+
+
+/*          Array Oprator      */
+//$all  => refer 05_items.js
+//documents/records which contains headphone,bag
+
+db.items.find({tags : {$all:['headphone', 'bag']}});
+
+db.items.find({
+  $and: [{ tags: { $eq: 'headphone' } }, { tags: { $eq: "bag" } }],
+});
+
+
+//$elemMatch
+db.inventory.insertMany([
+  {_id:1,"result":[80,89,98]},
+  {_id:2,"result":[80, 82,87]},
+  {_id:3,"result":[20,40,60]},
+  {_id:4,"result":[5,10,15,30]},
+]);
+
+//record which is >80 < 90
+db.inventory.find({result: {$gt:80, $lt:85}});
+db.inventory.find({ result: { $elemMatch:{$gt:80, $lt:85}}});
+
+
+db.items.find({qty:{$elemMatch : {size:'M', num:{$gt:80}}}});
+
+
+//$size
+db.inventory.find({result: {$size:4}});
+
+
+  db.customers.insertmany([
+    {
+      _id: "C001",
+      name: "Jack",
+      age: 20,
+      orders: [
+        {
+          orderId: 1001,
+          products: [
+            { product: "Pen", qty: 10, price: 20 },
+            { product: "notebook", qty: 5, price: 100 },
+          ],
+        },
+      ],
+    },
+    { _id: "C001", name: "sam", age: 21 },
+    { _id: "C001", name: "Jessica", age: 20 },
+  ]);

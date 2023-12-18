@@ -162,6 +162,14 @@
 #### $mod
     db.budgets.find({budget : {$mod: [100, 50]}});
 
+#### $text
+    db.articles.find({$text :{$search:'java'}});
+
+
+### array operators
+#### $all
+
+#### $elemMatch : condition is applicable for each element
 
 
 
@@ -169,8 +177,9 @@
 
 
 
-
-
+### create text index
+    db.<collection_name>.createIndex({field:"text"});
+    db.articles.createIndex({subject:"text"});
 ### exeute script (oracle sql vs mongodb)
 #### oracle sql
     create the script example => script/emp.sql
