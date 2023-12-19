@@ -200,8 +200,8 @@
 ####   step 3: paste the tools to bin folder of MongoDb( C:\Program Files\MongoDB\Server\7.0\bin)
 
  ####  step 4: execute the mongoimport command in cmd
-        syntax: mongoimport json-file -d <database_name> -c <collection_name> --jsonArray
+        syntax: mongoimport <json-file_name> -d <database_name> -c <collection_name> --jsonArray
         note: cmd path should be same as file path
         eg: mongoimport <json-file_name> -d seed -c persons --jsonArray
-        
+
 
