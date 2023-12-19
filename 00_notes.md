@@ -190,3 +190,18 @@
      create the script example => script/emp.js
      cmd> mongosh <database name> <absoulute path with filename>
      eg: cmd>mongosh seed  d:\12_dec_2023\script\emp.js
+
+
+### import json file
+####   step 1: download the tool => mongoimport
+        https://fastdl.mongodb.org/tools/db/mongodb-database-tools-windows-x86_64-100.7.3.zip
+
+####   step 2: unzip the file and copy all the tools from bin folder.
+####   step 3: paste the tools to bin folder of MongoDb( C:\Program Files\MongoDB\Server\7.0\bin)
+
+ ####  step 4: execute the mongoimport command in cmd
+        syntax: mongoimport json-file -d <database_name> -c <collection_name> --jsonArray
+        note: cmd path should be same as file path
+        eg: mongoimport <json-file_name> -d seed -c persons --jsonArray
+        
+
